@@ -1,5 +1,14 @@
 # Roadmaps — Mobile
 
+## Template copy
+
+This repository is one of the name-substituted Ionic React + Vite template copies in `bookchaowalit-mobile`.
+The canonical template is
+[`bookchaowalit-mobile/marketing-seo-analyzer-mobile`](https://github.com/bookchaowalit-mobile/marketing-seo-analyzer-mobile).
+Consolidation or archiving of the copies is pending owner decision D5 (BD-033), per
+`repository-catalog/portfolio/MOBILE-CONSOLIDATION-2026-10.md` in solo-empire.
+There is no Capacitor native project here: it builds a Vite web app only, not an Android or iOS binary.
+
 Ionic + React cross-platform mobile app for **Roadmaps**.
 
 Part of [Chaowalit Greepoke](https://bookchaowalit.com)'s 101 Portfolio Projects.
@@ -37,14 +46,15 @@ npm test            # vitest unit tests for src/lib
 npm run build       # tsc && vite build
 ```
 
-CI (`.github/workflows/build.yml`) runs all of the above with `npm ci`; failures
-are not masked.
+CI (`.github/workflows/ci.yml`) calls the shared `bookchaowalit/platform-ci-workflows` v1.1.1
+(`ci-node.yml` + `security.yml`, pinned by SHA): `npm ci`, lint, typecheck, tests, `npm run build`, and the
+gitleaks / Semgrep / OSV-Scanner / Trivy scans. Failures are not masked.
 
 ## Build
 
 ```bash
 npm run build
-# Deploy as native app via Capacitor or as PWA
+# Static web build in dist/. A native app would need a Capacitor project, which does not exist yet.
 ```
 
 ## Related
